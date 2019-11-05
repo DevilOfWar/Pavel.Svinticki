@@ -12,7 +12,7 @@ namespace EpamTask01dll
     public static class GCMs
     {
         /// <summary>
-        /// Taking GCM from two numbers by Eyklid algorithm
+        /// Taking GCM of two numbers by Eyklid algorithm
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -32,6 +32,11 @@ namespace EpamTask01dll
             }
             return a + b;
         }
+        /// <summary>
+        /// Taking GCM of difference count of numbers by Eyklid algorithm
+        /// </summary>
+        /// <param name="array">Array of numbers</param>
+        /// <returns></returns>
         public static int GCM(params int[] array)
         {
             if (array.Length > 1)
@@ -45,6 +50,39 @@ namespace EpamTask01dll
                 result = GCMs.GCM(result, array[index]);
             }
             return result;
+        }
+        /// <summary>
+        /// Taking GCM of two numbers by Binary Eyklid algorithm
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int BinaryGCM(int a, int b)
+        {
+            if (a == 0 || b == 0)
+            {
+                return a + b;
+            }
+            else if (a == 1 || b == 1)
+            {
+                return 1;
+            }
+            else if (a % 2 == 0 && b % 2 == 0)
+            {
+                return 2 * GCMs.BinaryGCM(a / 2, b / 2);
+            }
+            else if (a % 2 == 1 && b % 2 == 0)
+            {
+                return GCMs.BinaryGCM(a / 2, b);
+            }
+            else if (a % 2 == 0 && b % 2 == 1)
+            {
+                return GCMs.BinaryGCM(a, b/ 2);
+            }
+            else
+            {
+                return GCMs.BinaryGCM((Math.Max(a, b) - Math.Min(a, b)) / 2, Math.Min(a, b));
+            }
         }
     }
 }
