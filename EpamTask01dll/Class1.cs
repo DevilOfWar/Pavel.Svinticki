@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace EpamTask01dll
 {
     /// <summary>
-    /// статический класс GCMs для получения Наибольшего Общего Делителя (НОД, GCM) различными способами 
+    /// static class GCMs for taking GCM by differense ways 
     /// </summary>
     public static class GCMs
     {
         /// <summary>
-        /// Получение НОДа двух чисел
+        /// Taking GCM from two numbers by Eyklid algorithm
         /// </summary>
-        /// <param name="a">Первое число</param>
-        /// <param name="b">Второе число</param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
         /// <returns></returns>
         public static int GCM(int a, int b)
         {
@@ -31,6 +31,20 @@ namespace EpamTask01dll
                 }
             }
             return a + b;
+        }
+        public static int GCM(params int[] array)
+        {
+            if (array.Length > 1)
+            {
+                Console.WriteLine("Wrong number of paramets.");
+                return 0;
+            }
+            int result = GCMs.GCM(array[0], array[1]);
+            for (int index = 2; index < array.Length && result != 1; index++)
+            {
+                result = GCMs.GCM(result, array[index]);
+            }
+            return result;
         }
     }
 }
