@@ -40,7 +40,7 @@ namespace EpamTask01dll
         /// <returns></returns>
         public static int GCM(params int[] array)
         {
-            if (array.Length > 1)
+            if (array.Length <= 1)
             {
                 Console.WriteLine("Wrong number of paramets.");
                 return 0;
