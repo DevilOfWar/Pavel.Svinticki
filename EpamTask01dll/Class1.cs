@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace EpamTask01dll
 {
@@ -83,6 +84,35 @@ namespace EpamTask01dll
             {
                 return GCMs.BinaryGCM((Math.Max(a, b) - Math.Min(a, b)) / 2, Math.Min(a, b));
             }
+        }
+        /// <summary>
+        /// Taking GCM of parametr's array. Return GCM and time.
+        /// </summary>
+        /// <param name="compliteTime">Time of complitting</param>
+        /// <param name="array">Array of numbers</param>
+        /// <returns></returns>
+        public static int GCMTime(out Stopwatch compliteTime, params int[] array)
+        {
+            compliteTime = new Stopwatch();
+            compliteTime.Start();
+            int result = GCMs.GCM(array);
+            compliteTime.Stop();
+            return result;
+        }
+        /// <summary>
+        /// Taking GCM by binary Evklidov algorithm. Return GCM and time.
+        /// </summary>
+        /// <param name="compliteTime">Time of complitting</param>
+        /// <param name="a">First number</param>
+        /// <param name="b">Second number</param>
+        /// <returns></returns>
+        public static int BinaryGCMTime(out Stopwatch compliteTime, int a, int b)
+        {
+            compliteTime = new Stopwatch();
+            compliteTime.Start();
+            int result = GCMs.BinaryGCM(a, b);
+            compliteTime.Stop();
+            return result;
         }
     }
 }
