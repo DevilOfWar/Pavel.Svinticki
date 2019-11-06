@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace EpamTask01dll.TestsEpam01
 {
@@ -33,13 +34,20 @@ namespace EpamTask01dll.TestsEpam01
         [TestMethod()]
         public void BinaryGCMTest()
         {
-            Assert.Fail();
+            int a = 130;
+            int b = 105;
+            int result = GCMs.BinaryGCM(a, b);
+            Assert.AreEqual(5, result);
         }
 
         [TestMethod()]
         public void GCMTimeTest()
         {
-            Assert.Fail();
+            int a = 624;
+            int b = 7564;
+            Stopwatch time = new Stopwatch();
+            int result = GCMs.GCMTime(out time, a, b);
+            Assert.AreEqual(4, result);
         }
 
         [TestMethod()]
