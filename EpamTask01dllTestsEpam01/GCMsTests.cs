@@ -25,10 +25,10 @@ namespace EpamTask01dll.TestsEpam01
         public void GCMTest1()
         {
             int a = 117;
-            int b = 19;
+            int b = 39;
             int c = 3;
             int result = GCMs.GCM(a, b, c);
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(3, result);
         }
 
         [TestMethod()]
@@ -53,7 +53,11 @@ namespace EpamTask01dll.TestsEpam01
         [TestMethod()]
         public void BinaryGCMTimeTest()
         {
-            Assert.Fail();
+            int a = 624;
+            int b = 7564;
+            Stopwatch time = new Stopwatch();
+            int result = GCMs.BinaryGCMTime(out time, a, b);
+            Assert.AreEqual(4, result);
         }
     }
 }

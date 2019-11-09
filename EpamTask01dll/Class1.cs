@@ -74,11 +74,11 @@ namespace EpamTask01dll
             }
             else if (a % 2 == 1 && b % 2 == 0)
             {
-                return GCMs.BinaryGCM(a / 2, b);
+                return GCMs.BinaryGCM(a, b / 2);
             }
             else if (a % 2 == 0 && b % 2 == 1)
             {
-                return GCMs.BinaryGCM(a, b/ 2);
+                return GCMs.BinaryGCM(a / 2, b);
             }
             else
             {
