@@ -1,0 +1,6 @@
+D:\EPAM\EpamTask02dll\EpamTask02dll\bin\Debug\EpamTask02dll.dll
+D:\EPAM\EpamTask02dll\EpamTask02dll\bin\Debug\EpamTask02dll.pdb
+D:\EPAM\EpamTask02dll\EpamTask02dll\obj\Debug\EpamTask02dll.csprojAssemblyReference.cache
+D:\EPAM\EpamTask02dll\EpamTask02dll\obj\Debug\EpamTask02dll.csproj.CoreCompileInputs.cache
+D:\EPAM\EpamTask02dll\EpamTask02dll\obj\Debug\EpamTask02dll.dll
+D:\EPAM\EpamTask02dll\EpamTask02dll\obj\Debug\EpamTask02dll.pdb
